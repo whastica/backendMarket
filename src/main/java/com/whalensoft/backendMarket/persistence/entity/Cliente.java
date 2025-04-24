@@ -1,13 +1,12 @@
 package com.whalensoft.backendMarket.persistence.entity;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 
 @NoArgsConstructor
@@ -30,4 +29,7 @@ public class Cliente {
 
     @Column(name="correo_electronico")
     private String email;
+
+    @OneToMany(mappedBy = "cliente")
+    private List<Compra> compras;
 }
