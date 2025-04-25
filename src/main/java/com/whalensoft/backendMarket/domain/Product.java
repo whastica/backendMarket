@@ -4,14 +4,16 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
 public class Product {
-    private int productid;
+    private Integer productId;
     private String name;
-    private double price;
-    private int stock;
-    private boolean active;
+    private Integer categoryId;
+    private Double price;
+    private Integer stock;
+    private Boolean active;
     private Category category;
 }

@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 public class Category {
-    private int categoryId;
+    private Integer categoryId;
     private String category;
     private Boolean active;
 }

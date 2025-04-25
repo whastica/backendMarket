@@ -5,9 +5,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
 @Entity
 @Table(name="productos")
 public class Producto {
@@ -35,6 +36,5 @@ public class Producto {
     @ManyToOne
     @JoinColumn(name="id_categoria", insertable = false, updatable = false)
     private Categoria categoria;
-
 
 }
