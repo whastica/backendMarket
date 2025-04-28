@@ -24,7 +24,7 @@ public class Cliente {
     @Column(name="apellidos")
     private String apellido;
 
-    private Integer celular;
+    private Long celular;
     private String direccion;
 
     @Column(name="correo_electronico")
