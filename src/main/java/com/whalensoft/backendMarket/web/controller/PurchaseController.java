@@ -16,6 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/purchases")
+@CrossOrigin(origins = "http://localhost:5173")
 @Tag(name = "Purchases", description = "Operations related to customer purchases") // <-- Agrupa todo en Swagger
 public class PurchaseController {
 
@@ -37,10 +38,10 @@ public class PurchaseController {
             @ApiResponse(responseCode = "200", description = "Successfully retrieved purchases"),
             @ApiResponse(responseCode = "404", description = "Client not found")
     })
-    @GetMapping("/client/{idClient}")
+    @GetMapping("/client/{clientId}")
     public ResponseEntity<List<Purchase>> getByClient(
             @Parameter(description = "ID of the client whose purchases you want to retrieve", required = true)
-            @PathVariable("idClient") String clientId) {
+            @PathVariable("clientId") String clientId) {
         return purchaseService.getByClient(clientId)
                 .map(purchases -> new ResponseEntity<>(purchases, HttpStatus.OK))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
